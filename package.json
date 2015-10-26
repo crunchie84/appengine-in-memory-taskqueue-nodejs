@@ -1,0 +1,33 @@
+{
+  "name": "appengine-in-memory-taskqueue",
+  "version": "1.0.0",
+  "description": "Development stub for the taskqueue to replace it with an in-memory version wich does not rely on the docker+appengine middleware setup to function properly thus making your development cycle easier.",
+  "main": "taskqueue-inmemory",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crunchie84/appengine-in-memory-taskqueue-nodejs.git"
+  },
+  "keywords": [
+    "appengine",
+    "gae",
+    "app engine",
+    "taskqueue",
+    "development-stub"
+  ],
+  "dependencies": {
+    "q": "^1.0.1",
+    "winston": "^0.8.0"
+  },
+  "files":[
+    "taskqueue-inmemory.js"
+  ],
+  "author": "Mark van Straten <mark@q42.nl> (http://markswanderingthoughts.nl/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crunchie84/appengine-in-memory-taskqueue-nodejs/issues"
+  },
+  "homepage": "https://github.com/crunchie84/appengine-in-memory-taskqueue-nodejs#readme"
+}
