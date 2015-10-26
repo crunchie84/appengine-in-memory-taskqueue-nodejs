@@ -60,7 +60,6 @@ setTimeout(processTaskqueueItem, 500);
 // process one item from the taskqueue array and re-schedule ourselves afterwards
 function processTaskqueueItem(){
   var queueItem = _taskQueueItems.shift();
-  queueItem.attempt++;
   var def = q.defer();
 
   if(!queueItem){
@@ -68,6 +67,7 @@ function processTaskqueueItem(){
   }
   else{
     winston.debug('going to execute taskqueue item: %s:%d%s', _httpHost, _httpPort, queueItem.options.url);
+    queueItem.attempt++;
 
     var options = {
       host: _httpHost,
