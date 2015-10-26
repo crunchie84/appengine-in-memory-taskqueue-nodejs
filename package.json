@@ -1,6 +1,6 @@
 {
   "name": "appengine-in-memory-taskqueue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Development stub for the taskqueue to replace it with an in-memory version wich does not rely on the docker+appengine middleware setup to function properly thus making your development cycle easier.",
   "main": "taskqueue-inmemory",
   "scripts": {

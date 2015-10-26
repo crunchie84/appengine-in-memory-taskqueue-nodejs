@@ -11,9 +11,10 @@ To alleviate these issues this packages has been created. It contains a stub for
 var taskqueue;
 var appengine = require('appengine');
 if(isDevelopmentMode) {
-  taskqueue = require('appengine-in-memorh-taskqueue');
+  taskqueue = require('appengine-in-memory-taskqueue');
 
-  //optional; reconfigure to different defaults
+  // optional; reconfigure to different settings for port / retries.
+  // default = localhost:8080 no retries
   taskqueue.configure('localhost', 8181, 3);
 }
 else {
