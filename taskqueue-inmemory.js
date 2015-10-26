@@ -42,7 +42,7 @@ exports.configure = function configure(host, port, maxTaskRetries){
  * @param {!function(?Error)} callback callback
  */
 exports.add = function add(req, options, callback){
-  taskQueueItems.push({
+  _taskQueueItems.push({
     request: req,
     options: options,
     attempt: 0
@@ -81,7 +81,7 @@ function processTaskqueueItem(){
         if(queueItem.attempt <= _maxTaskRetries){
           winston.warn('Taskqueue item returned non-2XX code. Statuscode=%s. Current attempt %d of %d', res.statusCode, queueItem.attempt, 1 + _maxTaskRetries);
           //re-add item to queue for next retry
-          taskQueueItems.push(queueItem);
+          _taskQueueItems.push(queueItem);
         }
         else {
           winston.error('Taskqueue item returned non-2XX code. Statuscode=%s. Current attempt %d of %d', res.statusCode, queueItem.attempt, 1 + _maxTaskRetries);
